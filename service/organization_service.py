@@ -31,11 +31,3 @@ class Service:
         if user:
             return user
         return None
-
-
-def organization_read_service(db):
-    return None
-
-
-def organizations_create_service(db, name):
-    return None
