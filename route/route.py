@@ -11,7 +11,6 @@ from Organizations.model.organization_model import Users
 from Organizations.JWT_Security.security import Security
 from Organizations.model import organization_model
 from Organizations.schema.organization_schema import Organization_create
-from Organizations.service import organization_service
 from Organizations.service.organization_service import Service
 from Organizations.database import Database
 
