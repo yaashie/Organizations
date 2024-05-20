@@ -49,7 +49,7 @@ class Route:
     @staticmethod
     @app.post("/Organization")
     def organization_name(org: Organization_create, db: Session = Depends(Database.get_db)):
-        return organization_service.organizations_create_service(db, org.name)
+        return Service.organizations_create_service(db, org.name)
 
     @staticmethod
     @app.post('/token')
@@ -70,7 +70,7 @@ class Route:
     @staticmethod
     @app.get("/Organizations")
     def organizations(db: Session = Depends(Database.get_db)):
-        return organization_service.organization_read_service(db)
+        return Service.organization_read_service(db)
 
 
 if __name__ == '__main__':

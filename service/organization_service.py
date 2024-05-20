@@ -1,7 +1,7 @@
 from typing import Union, Type, Optional
 from sqlmodel import Session
 from Organizations.model.organization_model import ListOrganization, Users
-from Organizations.repository.organization_repository import organization_create_repo, organizations_read_repo
+
 from Organizations.JWT_Security.security import Security
 from Organizations.repository.organization_repository import Repository
 
@@ -10,11 +10,11 @@ class Service:
     @staticmethod
     def organizations_create_service(db: Session, organ: str):
         org = ListOrganization(name=organ)
-        return organization_create_repo(db, org)
+        return Repository.organization_create_repo(db, org)
 
     @staticmethod
     def organization_read_service(db: Session):
-        return organizations_read_repo(db)
+        return Repository.organizations_read_repo(db)
 
     @staticmethod
     def authenticate_user(username: str, password: str, db: Session) -> Union[bool, Type[Users]]:

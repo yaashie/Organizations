@@ -22,11 +22,3 @@ class Repository:
     @staticmethod
     def get_user_by_username(db: Session, username: str) -> Optional[Type[Users]]:
         return db.query(organization_model.Users).filter(organization_model.Users.username == username).first()
-
-
-def organization_create_repo():
-    return None
-
-
-def organizations_read_repo():
-    return None
