@@ -2,7 +2,6 @@ from datetime import timedelta, datetime
 from typing import Optional, List
 import jwt
 from fastapi.security import OAuth2PasswordBearer
-from pydantic import BaseModel
 from passlib.context import CryptContext
 
 
