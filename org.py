@@ -17,13 +17,13 @@ organization_data = {
 
 
 @app.post("/Organization")
-def organization_name(id: ID) -> Dict:
+def organization_name(id: ID) -> Dict[str, str]:
     org_name = organization_data.get(id.id, "org not found")
     return {"data": org_name}
 
 
 @app.get("/Organizations")
-def organizations() -> Dict:
+def organizations() -> Dict[int, str]:
     return organization_data
 
 

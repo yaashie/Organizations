@@ -5,13 +5,13 @@ from sqlalchemy import Column, Integer, String
 from Organizations.database import Database
 
 
-class ListOrganization(Database.Base):
+class ListOrganization(Database.Base): #type: ignore
     __tablename__ = "List_Organizations"
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
 
-class Users(Database.Base):
+class Users(Database.Base): #type: ignore
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
@@ -48,8 +48,10 @@ class TokenData(BaseModel):
 
 
 class CryptContext:
-    def verify(self, plain_password, hashed_password):
+    @staticmethod
+    def verify(plain_password : str, hashed_password : str) -> None:
         pass
 
-    def hash(self, password):
+    @staticmethod
+    def hash(password : str) -> None:
         pass
